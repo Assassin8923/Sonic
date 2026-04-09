@@ -1,0 +1,21 @@
+﻿<Window x:Class="Sonic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sonic - Оптимізатор диска" Height="450" Width="700" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/ak3ASjlQUYXPGvMfjcIeXOwFqfM.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="hide" Width="134"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame x:Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+        <DockPanel x:Name="Lmenu" HorizontalAlignment="Center" Height="434" LastChildFill="False" VerticalAlignment="Center" Width="132" Background="Black">
+            <Label x:Name="S1" Content="Sonic" Foreground="Red" FontSize="36" FontStyle="Italic" FontFamily="Algerian" RenderTransformOrigin="0.971,0.535" DockPanel.Dock="Top" Height="60" HorizontalAlignment="Center"/>
+            <Button x:Name="ButtonD" Content="Діагностика" DockPanel.Dock="Top" Height="38" Width="114" Background="Red" FontFamily="Arial" FontSize="20" Click="ButtonD_Click"/>
+            <Button x:Name="ButtonD_Copy" Content="Очищення" DockPanel.Dock="Top" Background="Red" FontFamily="Arial" FontSize="20" Click="ButtonD_Click" Height="35" Margin="0,13,0,0" Width="114"/>
+        </DockPanel>
+    </Grid>
+</Window>
