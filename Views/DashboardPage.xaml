@@ -13,7 +13,7 @@
                 </StackPanel>
             </Border>
 
-            <Button x:Name="BtnRefresh" Content="🔄 Оновити дані" Width="150" Height="35" Margin="0,20,0,0" HorizontalAlignment="Left" Click="BtnRefresh_Click" Background="Red"/>
+            <Button x:Name="BRefresh" Content="🔄 Оновити дані" Width="150" Height="35" Margin="0,20,0,0" HorizontalAlignment="Left" Click="BtnRefresh_Click" Background="Red"/>
         </StackPanel>
     </Grid>
 </Page>

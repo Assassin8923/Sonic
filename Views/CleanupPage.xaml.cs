@@ -11,22 +11,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sonic
+namespace Sonic.Views
 {
     /// <summary>
-    /// Interaction logic for DashboardPage.xaml
+    /// Interaction logic for CleanupPage.xaml
     /// </summary>
-    public partial class DashboardPage : Page
+    public partial class CleanupPage : Page
     {
-        public DashboardPage()
+        public CleanupPage()
         {
             InitializeComponent();
         }
 
-        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            // Update UI immediately; real refresh logic can be added later
-            TxtTempSize.Text = "Обчислення...";
+
         }
     }
 }

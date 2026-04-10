@@ -1,0 +1,20 @@
+﻿<Page x:Class="Sonic.Views.CleanupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sonic.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CleanupPage">
+
+    <Grid x:Name="background" Background="Black">
+        <DockPanel HorizontalAlignment="Center" Height="430" LastChildFill="False" VerticalAlignment="Center" Width="560" Background="Black">
+            <Label x:Name="Choose" Content="Очищення системи, оберіть варіант очищення:" Foreground="Red" FontSize="24" DockPanel.Dock="Top" Height="100" Width="529"/>
+            <CheckBox x:Name="Temp" Content="Тимчасові файли;" Checked="CheckBox_Checked" Foreground="Red" FontSize="18" DockPanel.Dock="Top" Height="27" Width="204" Margin="0,20,0,0"/>
+            <CheckBox x:Name="Cache" Content="Кеш;&#xD;&#xA;" Checked="CheckBox_Checked" Foreground="Red" FontSize="18" DockPanel.Dock="Top" Height="27" Width="204"/>
+            <CheckBox x:Name="Logs" Checked="CheckBox_Checked" Foreground="Red" FontSize="18" DockPanel.Dock="Top" Height="28" Width="204" Background="White" BorderBrush="Red" Content="Журнали;"/>
+            <Button x:Name="CButton" Content="Очистити" DockPanel.Dock="Top" Height="33" Width="248" Background="Red" HorizontalAlignment="Center" Margin="0,150,0,0" FontSize="22"/>
+        </DockPanel>
+    </Grid>
+</Page>
