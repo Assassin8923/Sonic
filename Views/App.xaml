@@ -2,8 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Sonic"
-             StartupUri="Views/MainWindow.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="ThemeTextBrush" Color="Black"/>
+        <SolidColorBrush x:Key="ThemeButtonBrush" Color="Red"/>
+        <SolidColorBrush x:Key="UpThemeButtonBrush" Color="Black"/>
+        <SolidColorBrush x:Key="UpThemeTextBrush" Color="Red"/>
     </Application.Resources>
 </Application>

@@ -1,5 +1,6 @@
 ﻿using Sonic.Views;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -11,6 +12,7 @@ namespace Sonic
         {
             InitializeComponent();
             RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
+            SetDarkTheme();
         }
 
         private void ButtonD_Click(object sender, RoutedEventArgs e)
@@ -52,6 +54,34 @@ namespace Sonic
         private void size_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new SettingsPage());
+        }
+
+   
+        public void SetLightTheme()
+        {
+            this.Background = Brushes.White;
+            if (this.Content is Grid mainGrid) mainGrid.Background = Brushes.White;
+            if (MainFrame != null) MainFrame.Background = Brushes.White;
+            Application.Current.Resources["ThemeTextBrush"] = Brushes.Black;
+            Application.Current.Resources["ThemeButtonBrush"] = Brushes.Black;
+            Application.Current.Resources["UpThemeButtonBrush"] = Brushes.White;
+            Application.Current.Resources["UpThemeTextBrush"] = Brushes.Black;
+        }
+
+        public void SetDarkTheme()
+        {
+            this.Background = Brushes.Black;
+            if (this.Content is Grid mainGrid) mainGrid.Background = Brushes.Black;
+            if (MainFrame != null) MainFrame.Background = Brushes.Black;
+            Application.Current.Resources["ThemeTextBrush"] = Brushes.Red;
+            Application.Current.Resources["ThemeButtonBrush"] = Brushes.Red;
+            Application.Current.Resources["UpThemeButtonBrush"] = Brushes.Black;
+            Application.Current.Resources["UpThemeTextBrush"] = Brushes.Red;
         }
     }
 }

@@ -5,16 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Sonic.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="CleanupPage">
+      d:DesignHeight="450"
+      Title="CleanupPage" Width="456">
 
-    <Grid x:Name="background" Background="Black">
-        <DockPanel HorizontalAlignment="Center" Height="430" LastChildFill="False" VerticalAlignment="Center" Width="560" Background="Black">
-            <Label x:Name="Choose" Content="Очищення системи, оберіть варіант очищення:" Foreground="Red" FontSize="24" DockPanel.Dock="Top" Height="100" Width="529"/>
-            <CheckBox x:Name="Temp" Content="Тимчасові файли;" Checked="CheckBox_Checked" Foreground="Red" FontSize="18" DockPanel.Dock="Top" Height="27" Width="204" Margin="0,20,0,0"/>
-            <CheckBox x:Name="Cache" Content="Кеш;&#xD;&#xA;" Checked="CheckBox_Checked" Foreground="Red" FontSize="18" DockPanel.Dock="Top" Height="27" Width="204"/>
-            <CheckBox x:Name="Logs" Checked="CheckBox_Checked" Foreground="Red" FontSize="18" DockPanel.Dock="Top" Height="28" Width="204" Background="White" BorderBrush="Red" Content="Журнали;"/>
-            <Button x:Name="CButton" Content="Очистити" DockPanel.Dock="Top" Height="33" Width="248" Background="Red" HorizontalAlignment="Center" Margin="0,150,0,0" FontSize="22"/>
+    <Grid x:Name="background" Width="800" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="49*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel x:Name="CDockPanel" LastChildFill="False" Background="Transparent" Margin="32,144,416,0" Grid.RowSpan="2" Height="162" VerticalAlignment="Top">
+
+            <CheckBox x:Name="Temp" Content="Тимчасові файли;" Checked="CheckBox_Checked" Foreground="{DynamicResource ThemeTextBrush}" FontSize="22" DockPanel.Dock="Top" Height="48" Width="251" Margin="0,20,0,0" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Hand"/>
+
+            <CheckBox x:Name="Cache" Content="Кеш;&#xD;&#xA;" Checked="CheckBox_Checked" Foreground="{DynamicResource ThemeTextBrush}" FontSize="22" DockPanel.Dock="Top" Height="48" Width="251" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
+
+            <CheckBox x:Name="Logs" Content="Журнали;" Checked="CheckBox_Checked" Foreground="{DynamicResource ThemeTextBrush}" FontSize="22" DockPanel.Dock="Top" Height="48" Width="251" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Bottom" Cursor="Hand"/>
+
         </DockPanel>
+
+        <Button x:Name="CButton" Content="Очистити" Background="{DynamicResource ThemeButtonBrush}" Foreground="White" Margin="86,123,454,0" FontSize="36" Grid.Row="1" Height="52" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS"/>
+
+        <Label x:Name="Choose" Content="Очищення системи, оберіть&#xD;&#xA;варіант очищення:" Foreground="{DynamicResource ThemeTextBrush}" FontSize="28" Margin="32,10,0,0" RenderTransformOrigin="0.722,0.778" VerticalAlignment="Top" HorizontalAlignment="Left" FontStyle="Italic" FontFamily="Comic Sans MS"/>
     </Grid>
 </Page>
