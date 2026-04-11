@@ -4,10 +4,10 @@
              xmlns:local="clr-namespace:Sonic"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="ThemeTextBrush" Color="Black"/>
-        <SolidColorBrush x:Key="ThemeButtonBrush" Color="Red"/>
-        <SolidColorBrush x:Key="UpThemeButtonBrush" Color="Black"/>
-        <SolidColorBrush x:Key="UpThemeTextBrush" Color="Red"/>
-        <SolidColorBrush x:Key="ThemeButtonTextBrush" Color="Black"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/DarkTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

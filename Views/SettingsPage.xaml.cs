@@ -19,16 +19,15 @@ namespace Sonic.Views
         {
             InitializeComponent();
             var mainWindow = Application.Current.MainWindow;
-
-            if (mainWindow != null && mainWindow.Background == Brushes.White)
+            if (Properties.Settings.Default.IsDarkTheme)
             {
-                Nslider.Value = 1;
-                Nlable.Content = "Світлий";
+                Nslider.Value = 0;
+                Nlable.Content = "Темна";
             }
             else
             {
-                Nslider.Value = 0;
-                Nlable.Content = "Темний";
+                Nslider.Value = 1;
+                Nlable.Content = "Світла";
             }
         }
 

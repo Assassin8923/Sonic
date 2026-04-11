@@ -8,11 +8,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SettingsPage">
 
-    <Grid x:Name="background" Background="Transparent">
-        <Label x:Name="Nlable1" Content="Налаштування" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeTextBrush}" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold"/>
+    <Grid x:Name="background" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="450" Width="800">
+        <Label x:Name="Nlable1" Content="Налаштування" Margin="227,10,227,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold"/>
 
         <Slider x:Name="Nslider" HorizontalAlignment="Left" Margin="75,111,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeTextBrush}" FontSize="18" FontFamily="Comic Sans MS" Maximum="1" TickFrequency="1" IsSnapToTickEnabled="True" Cursor="Hand" Width="66" Background="Transparent" BorderBrush="{x:Null}" ValueChanged="Nslider_ValueChanged"/>
 
-        <Label x:Name="Nlable" Content="Темний" HorizontalAlignment="Left" Margin="171,99,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeTextBrush}" FontSize="24" Background="{x:Null}"/>
+        <Label x:Name="Nlable" Content="Темний" HorizontalAlignment="Left" Margin="171,99,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="24" Background="{x:Null}"/>
     </Grid>
 </Page>

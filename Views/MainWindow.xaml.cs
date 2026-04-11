@@ -14,7 +14,13 @@ namespace Sonic
         {
             InitializeComponent();
             RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
-            SetDarkTheme();
+            this.SetResourceReference(Window.BackgroundProperty, "ThemeBackgroundBrush");
+            if (Properties.Settings.Default.IsDarkTheme)
+                SetDarkTheme();
+            else
+                SetLightTheme();
+            this.Width = Properties.Settings.Default.WindowWidth;
+            this.Height = Properties.Settings.Default.WindowHeight;
         }
 
         private void ButtonD_Click(object sender, RoutedEventArgs e)
@@ -24,10 +30,14 @@ namespace Sonic
 
         private void ToggleMenu_Click(object sender, RoutedEventArgs e)
         {
-                if (MenuColumn.Width.Value > 0)
-                    MenuColumn.Width = new System.Windows.GridLength(0);
-                else
-                    MenuColumn.Width = new System.Windows.GridLength(160);
+            if (MenuColumn.Width.Value > 0)
+            {
+                MenuColumn.Width = new GridLength(0);
+            }
+            else
+            {
+                MenuColumn.Width = new GridLength(140);
+            }
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -74,26 +84,16 @@ namespace Sonic
    
         public void SetLightTheme()
         {
-            this.Background = Brushes.White;
-            if (this.Content is Grid mainGrid) mainGrid.Background = Brushes.White;
-            if (MainFrame != null) MainFrame.Background = Brushes.White;
-            Application.Current.Resources["ThemeTextBrush"] = Brushes.Black;
-            Application.Current.Resources["ThemeButtonBrush"] = Brushes.Black;
-            Application.Current.Resources["UpThemeButtonBrush"] = Brushes.White;
-            Application.Current.Resources["UpThemeTextBrush"] = Brushes.Black;
-            Application.Current.Resources["ThemeButtonTextBrush"] = Brushes.White;
-        }
+            var dict = new ResourceDictionary() { Source = new Uri("Resources/LightTheme.xaml", UriKind.Relative) };
+            Application.Current.Resources.MergedDictionaries[0] = dict;
+            Properties.Settings.Default.IsDarkTheme = false ;
+        }   
 
         public void SetDarkTheme()
         {
-            this.Background = Brushes.Black;
-            if (this.Content is Grid mainGrid) mainGrid.Background = Brushes.Black;
-            if (MainFrame != null) MainFrame.Background = Brushes.Black;
-            Application.Current.Resources["ThemeTextBrush"] = Brushes.Red;
-            Application.Current.Resources["ThemeButtonBrush"] = Brushes.Red;
-            Application.Current.Resources["UpThemeButtonBrush"] = Brushes.Black;
-            Application.Current.Resources["UpThemeTextBrush"] = Brushes.Red;
-            Application.Current.Resources["ThemeButtonTextBrush"] = Brushes.Black;
+            var dict = new ResourceDictionary() {Source = new Uri("Resources/DarkTheme.xaml", UriKind.Relative) };
+            Application.Current.Resources.MergedDictionaries[0] = dict;
+            Properties.Settings.Default.IsDarkTheme = true;
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -129,6 +129,22 @@ namespace Sonic
         public void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                Properties.Settings.Default.WindowWidth = this.RestoreBounds.Width;
+                Properties.Settings.Default.WindowHeight = this.RestoreBounds.Height;
+            }
+            else
+            {
+                Properties.Settings.Default.WindowWidth = this.Width;
+                Properties.Settings.Default.WindowHeight = this.Height;
+            }
+            Properties.Settings.Default.Save();
+            base.OnClosing(e);
         }
     }
 }
