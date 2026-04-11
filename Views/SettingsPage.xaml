@@ -13,6 +13,6 @@
 
         <Slider x:Name="Nslider" HorizontalAlignment="Left" Margin="75,111,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeTextBrush}" FontSize="18" FontFamily="Comic Sans MS" Maximum="1" TickFrequency="1" IsSnapToTickEnabled="True" Cursor="Hand" Width="66" Background="Transparent" BorderBrush="{x:Null}" ValueChanged="Nslider_ValueChanged"/>
 
-        <Label x:Name="Nlable" Content="Темний" HorizontalAlignment="Left" Margin="171,99,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeTextBrush}" FontSize="24"/>
+        <Label x:Name="Nlable" Content="Темний" HorizontalAlignment="Left" Margin="171,99,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeTextBrush}" FontSize="24" Background="{x:Null}"/>
     </Grid>
 </Page>

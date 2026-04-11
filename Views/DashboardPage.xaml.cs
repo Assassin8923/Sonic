@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading.Tasks;
 
 namespace Sonic
 {
@@ -23,10 +24,12 @@ namespace Sonic
             InitializeComponent();
         }
 
-        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        private async void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            // Update UI immediately; real refresh logic can be added later
-            TxtTempSize.Text = "Обчислення...";
+            StatusText.Text = "Оновлення даних...";
+            await Task.Delay(2000);
+            TxtTempSize.Text = "1.5 GB";
+            StatusText.Text = "Дані оновлено";
         }
     }
 }

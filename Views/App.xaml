@@ -8,5 +8,6 @@
         <SolidColorBrush x:Key="ThemeButtonBrush" Color="Red"/>
         <SolidColorBrush x:Key="UpThemeButtonBrush" Color="Black"/>
         <SolidColorBrush x:Key="UpThemeTextBrush" Color="Red"/>
+        <SolidColorBrush x:Key="ThemeButtonTextBrush" Color="Black"/>
     </Application.Resources>
 </Application>

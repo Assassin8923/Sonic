@@ -8,13 +8,15 @@
       d:DesignHeight="450"
       Title="CleanupPage" Width="456">
 
-    <Grid x:Name="background" Width="800" Background="Transparent">
+    <Grid x:Name="background" Background="Transparent" HorizontalAlignment="Left" Width="456">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="41*"/>
-            <RowDefinition Height="49*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DockPanel x:Name="CDockPanel" LastChildFill="False" Background="Transparent" Margin="32,144,416,0" Grid.RowSpan="2" Height="162" VerticalAlignment="Top">
+        <DockPanel x:Name="CDockPanel" LastChildFill="False" Margin="90,143,115,0" VerticalAlignment="Top">
 
             <CheckBox x:Name="Temp" Content="Тимчасові файли;" Checked="CheckBox_Checked" Foreground="{DynamicResource ThemeTextBrush}" FontSize="22" DockPanel.Dock="Top" Height="48" Width="251" Margin="0,20,0,0" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Hand"/>
 
@@ -24,8 +26,9 @@
 
         </DockPanel>
 
-        <Button x:Name="CButton" Content="Очистити" Background="{DynamicResource ThemeButtonBrush}" Foreground="White" Margin="86,123,454,0" FontSize="36" Grid.Row="1" Height="52" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS"/>
+        <Button x:Name="CButton" Content="Очистити" Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}" Margin="86,356,0,0" FontSize="36" Height="52" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Width="260" BorderBrush="{x:Null}"/>
 
-        <Label x:Name="Choose" Content="Очищення системи, оберіть&#xD;&#xA;варіант очищення:" Foreground="{DynamicResource ThemeTextBrush}" FontSize="28" Margin="32,10,0,0" RenderTransformOrigin="0.722,0.778" VerticalAlignment="Top" HorizontalAlignment="Left" FontStyle="Italic" FontFamily="Comic Sans MS"/>
+        <Label x:Name="Choose" Content="Очищення системи, оберіть&#xD;&#xA;варіант очищення:" Foreground="{DynamicResource ThemeTextBrush}" FontSize="28" Margin="32,10,0,0" RenderTransformOrigin="0.722,0.778" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Width="383"/>
+        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" Height="175" Margin="66,132,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="306"/>
     </Grid>
 </Page>
