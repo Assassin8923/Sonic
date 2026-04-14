@@ -16,19 +16,19 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DockPanel x:Name="CDockPanel" LastChildFill="False" Margin="90,143,115,0" VerticalAlignment="Top">
+        <DockPanel x:Name="CDockPanel" LastChildFill="False" VerticalAlignment="Center" HorizontalAlignment="Center" Width="368">
 
-            <CheckBox x:Name="Temp" Content="Тимчасові файли;" Checked="CheckBox_Checked" FontSize="22" DockPanel.Dock="Top" Height="48" Width="251" Margin="0,20,0,0" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Hand" Foreground="{DynamicResource ThemeButtonBrush}"/>
+            <CheckBox x:Name="Temp" Content="Тимчасові файли;" Checked="CheckBox_Checked" FontSize="22" DockPanel.Dock="Top" Height="48" Width="327" Margin="0,20,0,0" FontWeight="Bold" FontStyle="Italic" Cursor="Hand" Foreground="{DynamicResource ThemeButtonBrush}"/>
 
-            <CheckBox x:Name="Cache" Content="Кеш;&#xD;&#xA;" Checked="CheckBox_Checked" FontSize="22" DockPanel.Dock="Top" Height="48" Width="251" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Foreground="{DynamicResource ThemeButtonBrush}"/>
+            <CheckBox x:Name="Cache" Content="Кеш(наразі не працює);&#xA;" Checked="CheckBox_Checked" FontSize="22" DockPanel.Dock="Top" Height="48" Width="328" FontWeight="Bold" FontStyle="Italic" Cursor="Hand" Foreground="{DynamicResource ThemeButtonBrush}"/>
 
-            <CheckBox x:Name="Logs" Content="Журнали;" Checked="CheckBox_Checked" FontSize="22" DockPanel.Dock="Top" Height="48" Width="251" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Bottom" Cursor="Hand" Foreground="{DynamicResource ThemeButtonBrush}"/>
+            <CheckBox x:Name="Logs" Content="Журнали(наразі не працює);" Checked="CheckBox_Checked" FontSize="22" DockPanel.Dock="Top" Height="48" Width="327" FontWeight="Bold" FontStyle="Italic" Cursor="Hand" Foreground="{DynamicResource ThemeButtonBrush}"/>
 
         </DockPanel>
 
-        <Button x:Name="CButton" Content="Очистити" Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}" Margin="86,356,0,0" FontSize="36" Height="52" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Width="260" BorderBrush="{x:Null}"/>
+        <Button x:Name="CButton" Content="Очистити" Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}" Margin="86,356,0,0" FontSize="36" Height="52" VerticalAlignment="Top" Cursor="Hand" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Width="260" BorderBrush="{x:Null}" Click="CButton_Click"/>
 
         <Label x:Name="Choose" Content="Очищення системи, оберіть&#xD;&#xA;варіант очищення:" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="28" Margin="32,10,0,0" RenderTransformOrigin="0.722,0.778" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Width="383" Background="{x:Null}"/>
-        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" Height="175" Margin="66,132,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="306"/>
+        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" Height="174" VerticalAlignment="Center" HorizontalAlignment="Center" Width="368"/>
     </Grid>
 </Page>

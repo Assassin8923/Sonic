@@ -6,7 +6,7 @@
         mc:Ignorable="d" x:Class="Sonic.MainWindow"
         Title="Sonic " Height="600" Width="800" WindowStartupLocation="CenterScreen"
         PreviewKeyDown="Window_KeyDown"
-        WindowStyle="None" AllowsTransparency="False" Foreground="{x:Null}" Background="{x:Null}" MinWidth="800" MinHeight="600">
+        WindowStyle="None" AllowsTransparency="False" Foreground="{x:Null}" Background="{x:Null}" MinWidth="800" MinHeight="600" Icon="/Resources/icon.ico">
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="6"/>
@@ -19,11 +19,12 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition x:Name="MenuColumn" Width="140" MaxWidth="140"/>
+            <ColumnDefinition x:Name="MenuColumn" Width="0" MaxWidth="140"/>
+            <ColumnDefinition Width="140"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="menugrid" Grid.Row="0" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Grid.ColumnSpan="2">
+        <Grid x:Name="menugrid" Grid.Row="0" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Grid.ColumnSpan="3">
             <StackPanel x:Name="Panel" Orientation="Horizontal" Background="{DynamicResource UpThemeButtonBrush}">
                 <Button Content="☰" Width="40" Background="{x:Null}" Foreground="{DynamicResource UpThemeTextBrush}" FontSize="20" BorderThickness="0" Click="ToggleMenu_Click" Cursor="Hand" BorderBrush="{x:Null}"/>
                 <TextBlock Text="Sonic — system optimizer" Foreground="{DynamicResource UpThemeTextBrush}" VerticalAlignment="Center" Margin="10,0" FontFamily="Algerian" FontSize="22" FontStyle="Italic"/>
@@ -36,7 +37,7 @@
             </StackPanel>
         </Grid>
 
-        <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Uniform" VerticalAlignment="Top" Margin="0,20,0,0">
+        <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Uniform" VerticalAlignment="Top" Margin="0,20,0,0" Grid.ColumnSpan="2">
             <DockPanel x:Name="Lmenu" LastChildFill="False" HorizontalAlignment="Center" Width="136">
                 <Button x:Name="ButtonD" Content="Діагностика" DockPanel.Dock="Top" Height="38" Width="127"
                         Background="{DynamicResource ThemeButtonBrush}"
@@ -52,10 +53,10 @@
             </DockPanel>
         </Viewbox>
 
-        <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Uniform">
+        <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Uniform">
             <Frame x:Name="MainFrame" Source="/Views/DashboardPage.xaml" NavigationUIVisibility="Hidden"/>
         </Viewbox>
 
-        <Button x:Name="exitbutton" Content="Вийти" Click ="Exit_Click" Grid.Row="1" Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}" BorderBrush="{x:Null}" FontFamily="Comic Sans MS" FontSize="18" Cursor="Hand" VerticalContentAlignment="Bottom" Height="29" Margin="6,0,15,10" VerticalAlignment="Bottom" Visibility="Hidden"/>
+        <Button x:Name="exitbutton" Content="Вийти" Click ="Exit_Click" Grid.Row="1" Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}" BorderBrush="{x:Null}" FontFamily="Comic Sans MS" FontSize="18" Cursor="Hand" VerticalContentAlignment="Bottom" Height="29" Margin="6,0,15,10" VerticalAlignment="Bottom" Visibility="Hidden" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

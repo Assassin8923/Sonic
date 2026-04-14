@@ -8,20 +8,15 @@
             <RowDefinition Height="223*"/>
             <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
-        <StackPanel Margin="48,30,48,0" Height="386" VerticalAlignment="Top">
-            <TextBlock x:Name="TextD" Text="Діагностика системи" FontSize="28" FontWeight="SemiBold" Margin="0,0,0,20" Foreground="{DynamicResource ThemeButtonBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" CornerRadius="5" Padding="15" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <StackPanel>
-                    <TextBlock Text="Об'єм тимчасових файлів:" FontSize="16" Foreground="{DynamicResource ThemeButtonBrush}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="TxtTempSize" Text="Обчислення..." FontSize="36" FontWeight="Bold" Foreground="{DynamicResource ThemeButtonBrush}" Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Border>
-
-        </StackPanel>
-        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" Margin="161,16,161,10" Grid.Row="1">
+        <TextBlock x:Name="TextD" Text="Діагностика системи" FontSize="36" FontWeight="SemiBold" Margin="0,126,0,0" Foreground="{DynamicResource ThemeButtonBrush}" VerticalAlignment="Top" Height="51" HorizontalAlignment="Center"/>
+        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" CornerRadius="5" Padding="15" Height="103" HorizontalAlignment="Left" Margin="195,215,0,167" VerticalAlignment="Center">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                <TextBlock Text="Об'єм тимчасових файлів:" FontSize="16" Foreground="{DynamicResource ThemeButtonBrush}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="TxtTempSize" Text="Обчислення..." FontSize="36" FontWeight="Bold" Foreground="{DynamicResource ThemeButtonBrush}" Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" Margin="161,16,161,10" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="StatusText" TextWrapping="Wrap" Foreground="{DynamicResource ThemeButtonBrush}" FontFamily="Comic Sans MS" FontSize="16" Margin="93,0,93,0" Height="19" VerticalAlignment="Center"><Run Language="uk-ua" Text="Статус обчислення."/></TextBlock>
         </Border>
-        <Button x:Name="BRefresh" Content="🔄 Оновити дані" 
-         Click="BtnRefresh_Click" Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}" Cursor="Hand" BorderBrush="{x:Null}" RenderTransformOrigin="0.499,2.051" Margin="232,440,232,10" FontSize="22" FontFamily="Comic Sans MS"/>
     </Grid>
 </Page>
