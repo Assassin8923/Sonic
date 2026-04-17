@@ -1,22 +1,27 @@
-﻿<Page x:Class="Sonic.DashboardPage"
+<Page x:Class="Sonic.DashboardPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="DashboardPage" Height="550" Width="660">
 
-    <Grid x:Name="background" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Width="660" Height="550">
+    <Grid x:Name="background" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="24">
         <Grid.RowDefinitions>
-            <RowDefinition Height="223*"/>
-            <RowDefinition Height="30*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="TextD" Text="Діагностика системи" FontSize="36" FontWeight="SemiBold" Margin="0,126,0,0" Foreground="{DynamicResource ThemeButtonBrush}" VerticalAlignment="Top" Height="51" HorizontalAlignment="Center"/>
-        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" CornerRadius="5" Padding="15" Height="103" HorizontalAlignment="Left" Margin="195,215,0,167" VerticalAlignment="Center">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
-                <TextBlock Text="Об'єм тимчасових файлів:" FontSize="16" Foreground="{DynamicResource ThemeButtonBrush}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBlock x:Name="TxtTempSize" Text="Обчислення..." FontSize="36" FontWeight="Bold" Foreground="{DynamicResource ThemeButtonBrush}" Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            </StackPanel>
-        </Border>
-        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" Margin="161,16,161,10" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="StatusText" TextWrapping="Wrap" Foreground="{DynamicResource ThemeButtonBrush}" FontFamily="Comic Sans MS" FontSize="16" Margin="93,0,93,0" Height="19" VerticalAlignment="Center"><Run Language="uk-ua" Text="Статус обчислення."/></TextBlock>
+
+        <StackPanel Grid.Row="0" MaxWidth="520" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="TextD" Text="Діагностика системи" FontSize="36" FontWeight="SemiBold" Margin="0,0,0,28" Foreground="{DynamicResource ThemeButtonBrush}" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" CornerRadius="5" Padding="24" HorizontalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="Об'єм тимчасових файлів:" FontSize="16" Foreground="{DynamicResource ThemeButtonBrush}" HorizontalAlignment="Center" TextAlignment="Center"/>
+                    <TextBlock Text="{Binding TempSize}" FontSize="36" FontWeight="Bold" Foreground="{DynamicResource ThemeButtonBrush}" Margin="0,10,0,0" HorizontalAlignment="Center" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Button Content="Оновити дані" Click="RefreshButton_Click" Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}" Margin="0,20,0,0" Padding="20,8" BorderBrush="{x:Null}" FontSize="18" FontFamily="Comic Sans MS" HorizontalAlignment="Center" Cursor="Hand"/>
+        </StackPanel>
+
+        <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" Grid.Row="1" Margin="120,16,120,0" Padding="16,10" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <TextBlock Text="{Binding StatusText}" TextWrapping="Wrap" TextAlignment="Center" Foreground="{DynamicResource ThemeButtonBrush}" FontFamily="Comic Sans MS" FontSize="16" VerticalAlignment="Center"/>
         </Border>
     </Grid>
 </Page>

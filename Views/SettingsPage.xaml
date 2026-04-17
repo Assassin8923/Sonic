@@ -1,18 +1,33 @@
-﻿<Page x:Class="Sonic.Views.SettingsPage"
+<Page x:Class="Sonic.Views.SettingsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Sonic.Views"
-      mc:Ignorable="d" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SettingsPage">
 
     <Grid x:Name="background" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="450" Width="800">
-        <Label x:Name="Nlable1" Content="Налаштування" Margin="227,10,227,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold"/>
+        <StackPanel Width="420" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="Nlable1" Content="Налаштування" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Center"/>
 
-        <Slider x:Name="Nslider" HorizontalAlignment="Left" Margin="75,111,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeTextBrush}" FontSize="18" FontFamily="Comic Sans MS" Maximum="1" TickFrequency="1" IsSnapToTickEnabled="True" Cursor="Hand" Width="66" Background="Transparent" BorderBrush="{x:Null}" ValueChanged="Nslider_ValueChanged"/>
+            <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" CornerRadius="6" Padding="20" Margin="0,24,0,0">
+                <StackPanel>
+                    <TextBlock Text="Ім'я" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="18" Margin="0,0,0,6"/>
+                    <TextBox Text="{Binding Profile.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Padding="8"/>
 
-        <Label x:Name="Nlable" Content="Темний" HorizontalAlignment="Left" Margin="171,99,0,0" VerticalAlignment="Top" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="24" Background="{x:Null}"/>
+                    <TextBlock Text="Вік" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="18" Margin="0,14,0,6"/>
+                    <TextBox Text="{Binding Profile.Age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Padding="8"/>
+
+                    <TextBlock Text="Email" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="18" Margin="0,14,0,6"/>
+                    <TextBox Text="{Binding Profile.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Padding="8"/>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,24,0,0">
+                <Slider x:Name="Nslider" Foreground="{DynamicResource ThemeTextBrush}" FontSize="18" FontFamily="Comic Sans MS" Maximum="1" TickFrequency="1" IsSnapToTickEnabled="True" Cursor="Hand" Width="66" Background="Transparent" BorderBrush="{x:Null}" Value="{Binding ThemeSliderValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label x:Name="Nlable" Content="{Binding ThemeLabel}" Margin="18,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="24" Background="{x:Null}"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

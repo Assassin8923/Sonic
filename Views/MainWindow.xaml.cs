@@ -8,6 +8,7 @@ namespace Sonic
 {
     public partial class MainWindow : Window
     {
+        private const double ExpandedMenuWidth = 140;
         private bool fullscreen = false;
 
         public MainWindow()
@@ -33,16 +34,21 @@ namespace Sonic
             if (MenuColumn.Width.Value > 0)
             {
                 MenuColumn.Width = new GridLength(0);
+                MenuViewbox.Visibility = Visibility.Collapsed;
             }
             else
             {
-                MenuColumn.Width = new GridLength(140);
+                MenuColumn.Width = new GridLength(ExpandedMenuWidth);
+                MenuViewbox.Visibility = Visibility.Visible;
             }
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
                 this.DragMove();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
