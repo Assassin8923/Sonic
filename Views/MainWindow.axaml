@@ -1,0 +1,50 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Sonic.MainWindow"
+        Title="Sonic" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        KeyDown="Window_KeyDown"
+        SystemDecorations="None"
+        MinWidth="800" MinHeight="600"
+        Icon="/Resources/icon.ico">
+
+    <Grid RowDefinitions="40,*" ColumnDefinitions="140,*">
+
+        <Grid x:Name="menugrid" Grid.Row="0" Grid.ColumnSpan="2" Background="{DynamicResource UpThemeButtonBrush}" ColumnDefinitions="Auto,*,Auto">
+
+            <Button x:Name="BurgerButton" Grid.Column="0" Content="☰" Width="40" Background="Transparent" Foreground="{DynamicResource UpThemeTextBrush}" FontSize="20" BorderThickness="0" Click="ToggleMenu_Click" Cursor="Hand"/>
+
+            <Border Grid.Column="1" Background="Transparent" PointerPressed="Border_PointerPressed">
+                <TextBlock Text="Sonic — system optimizer" Foreground="{DynamicResource UpThemeTextBrush}" VerticalAlignment="Center" Margin="10,0" FontFamily="Algerian" FontSize="22" FontStyle="Italic"/>
+            </Border>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
+                <Button x:Name="hide" Content="—" Width="35" Background="Transparent" BorderThickness="0" Foreground="{DynamicResource UpThemeTextBrush}" FontSize="18" Cursor="Hand" Click="hide_Click"/>
+                <Button x:Name="SizeButton" Content="🗖" Width="35" Background="Transparent" BorderThickness="0" Foreground="{DynamicResource UpThemeTextBrush}" FontSize="24" Click="size_Click" VerticalContentAlignment="Top"/>
+                <Button x:Name="ButtonCl" Content="✕" Width="35" Background="Transparent" BorderThickness="0" Foreground="{DynamicResource UpThemeTextBrush}" Click="Button_Click" FontSize="24" Cursor="Hand"/>
+            </StackPanel>
+        </Grid>
+
+        <Viewbox x:Name="MenuViewbox" Grid.Row="1" Grid.Column="0" Stretch="Uniform" VerticalAlignment="Top" Margin="0,20,0,0">
+            <DockPanel x:Name="Lmenu" LastChildFill="False" HorizontalAlignment="Center" Width="136">
+                <Button x:Name="ButtonD" Content="Діагностика" DockPanel.Dock="Top" Height="38" Width="127"
+                        Background="{DynamicResource ThemeButtonBrush}"
+                        FontFamily="Comic Sans MS" FontSize="18" Click="ButtonD_Click" Margin="0,10,0,0" Cursor="Hand" Foreground="{DynamicResource ThemeButtonTextBrush}" BorderThickness="0"/>
+
+                <Button x:Name="Cleanerbutton" Content="Очистити" DockPanel.Dock="Top" Height="38" Width="127" Margin="0,10,0,0"
+                        Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}"
+                        FontSize="18" Cursor="Hand" FontFamily="Comic Sans MS" Click="BClean_Click" BorderThickness="0"/>
+
+                <Button x:Name="settingbutton" Content="Налаштування" DockPanel.Dock="Top" Height="38" Width="127" Margin="0,10,0,0"
+                        Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}"
+                        Cursor="Hand" FontSize="18" FontFamily="Comic Sans MS" Click="Button_Click_1" BorderThickness="0"/>
+            </DockPanel>
+        </Viewbox>
+
+        <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Uniform">
+            <ContentControl x:Name="MainFrame"/>
+        </Viewbox>
+
+        <Button x:Name="exitbutton" Content="Вийти" Click="Exit_Click" Grid.Row="1" Background="{DynamicResource ThemeButtonBrush}" Foreground="{DynamicResource ThemeButtonTextBrush}" BorderThickness="0" FontFamily="Comic Sans MS" FontSize="18" Cursor="Hand" VerticalAlignment="Bottom" Height="29" Margin="6,0,15,10" IsVisible="False"/>
+    </Grid>
+</Window>

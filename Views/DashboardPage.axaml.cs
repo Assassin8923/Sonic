@@ -1,10 +1,11 @@
-using System.Windows;
-using System.Windows.Controls;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Sonic.ViewModels;
 
 namespace Sonic
 {
-    public partial class DashboardPage : Page
+    public partial class DashboardPage : UserControl
     {
         private readonly DashboardViewModel _viewModel;
 
@@ -16,13 +17,13 @@ namespace Sonic
             Loaded += DashboardPage_Loaded;
         }
 
-        private async void DashboardPage_Loaded(object sender, RoutedEventArgs e)
+        private async void DashboardPage_Loaded(object? sender, RoutedEventArgs e)
         {
             Loaded -= DashboardPage_Loaded;
             await _viewModel.RefreshAsync();
         }
 
-        private async void RefreshButton_Click(object sender, RoutedEventArgs e)
+        private async void RefreshButton_Click(object? sender, RoutedEventArgs e)
         {
             await _viewModel.RefreshAsync();
         }

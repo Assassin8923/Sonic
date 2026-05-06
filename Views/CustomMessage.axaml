@@ -1,0 +1,38 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Sonic.Views.CustomMessage"
+        Title="Повідомлення" Height="200" Width="400"
+        WindowStartupLocation="CenterScreen"
+        SystemDecorations="None"
+        CanResize="False"
+        Topmost="True"
+        Background="Transparent">
+
+    <Border Background="{DynamicResource ThemeBackgroundBrush}"
+            BorderBrush="{DynamicResource ThemeBackgroundBrush}" BorderThickness="1"
+            CornerRadius="8" Padding="5">
+
+        <Grid RowDefinitions="35,*,50">
+
+            <Grid Grid.Row="0" PointerPressed="Grid_PointerPressed" Background="Transparent" ColumnDefinitions="*,Auto">
+                <TextBlock x:Name="TitleText" Text="Sonic" Foreground="{DynamicResource UpThemeTextBrush}"
+                           FontFamily="Algerian" FontSize="16" VerticalAlignment="Center" Margin="10,0"/>
+
+                <Button Content="✕" Width="30" HorizontalAlignment="Right" Background="Transparent"
+                        BorderThickness="0" Foreground="{DynamicResource UpThemeTextBrush}"
+                        FontSize="18" Cursor="Hand" Click="CloseButton_Click" Grid.Column="1"/>
+            </Grid>
+
+            <TextBlock x:Name="MessageText" Grid.Row="1" Text="Тут буде текст..."
+                       Foreground="{DynamicResource UpThemeTextBrush}"
+                       FontSize="16" FontFamily="Comic Sans MS"
+                       TextWrapping="Wrap" TextAlignment="Center"
+                       VerticalAlignment="Center" Margin="20,10"/>
+
+            <Button Grid.Row="2" Content="ОК" Width="100" Height="30"
+                    Foreground="{DynamicResource ThemeButtonBrush}"
+                    BorderThickness="0" FontSize="16" FontFamily="Comic Sans MS"
+                    Cursor="Hand" Click="OkButton_Click" HorizontalAlignment="Center" Background="Transparent"/>
+        </Grid>
+    </Border>
+</Window>

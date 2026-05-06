@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Sonic.Views.SettingsPage">
+
+    <Grid x:Name="background" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="450" Width="800">
+        <StackPanel Width="420" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="Nlable1" Content="Налаштування" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+
+            <Border BorderBrush="{DynamicResource ThemeButtonBrush}" BorderThickness="1" CornerRadius="6" Padding="20" Margin="0,24,0,0">
+                <StackPanel>
+                    <TextBlock Text="Ім'я" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="18" Margin="0,0,0,6"/>
+                    <TextBox Text="{Binding Profile.Name}" FontSize="18" Padding="8"/>
+
+                    <TextBlock Text="Вік" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="18" Margin="0,14,0,6"/>
+                    <TextBox Text="{Binding Profile.Age}" FontSize="18" Padding="8"/>
+
+                    <TextBlock Text="Email" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="18" Margin="0,14,0,6"/>
+                    <TextBox Text="{Binding Profile.Email}" FontSize="18" Padding="8"/>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,24,0,0">
+                <Slider x:Name="Nslider" Foreground="{DynamicResource ThemeTextBrush}" FontSize="18" FontFamily="Comic Sans MS" Maximum="1" TickFrequency="1" IsSnapToTickEnabled="True" Cursor="Hand" Width="66" Background="Transparent" BorderThickness="0" Value="{Binding ThemeSliderValue}"/>
+                <Label x:Name="Nlable" Content="{Binding ThemeLabel}" Margin="18,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource ThemeButtonBrush}" FontSize="24" Background="Transparent"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
